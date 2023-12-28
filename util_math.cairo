@@ -132,3 +132,13 @@ func multiply_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (
     return (product = FixedPoint(product_value))
 end
 
+func divide_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (quotient: FixedPoint):
+    alloc_locals
+    let (divisor) = absolute(b.value)
+    let (div_sign) = extract_sign(b.value)
+    tempvar product = a.value * FIXED_FRACT_PART
+    let (quotient_unsigned, _) = division_with_remainder_signed(product, divisor, FIXED_BOUND)
+    assert_fixed_range(quotient_unsigned)
+    tempvar quotient_value = quotient_unsigned * div_sign
+    return (quotient = FixedPoint(quotient_value))
+end
