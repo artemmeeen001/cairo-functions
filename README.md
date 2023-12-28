@@ -27,3 +27,9 @@ git clone https://github.com/artemmeeen001/cairo-functions
 ```
 
 Navigate to the cloned directory:
+
+
+```
+cd https://github.com/artemmeeen001/cairo-functions
+```
+
