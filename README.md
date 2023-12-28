@@ -40,3 +40,11 @@ Contributions to expand and improve this library are welcome. To contribute:
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
 
+
+## Contact
+
+For any queries or suggestions, feel free to open an issue in the repository.
+
+```
+cd https://github.com/artemmeeen001/cairo-functions
+```
