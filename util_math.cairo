@@ -119,3 +119,9 @@ func add_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (sum: 
     return (sum = FixedPoint(sum_value))
 end
 
+func subtract_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (difference: FixedPoint):
+    let difference_value = a.value - b.value
+    assert_fixed_range(difference_value)
+    return (difference = FixedPoint(difference_value))
+end
+
