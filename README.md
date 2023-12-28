@@ -44,7 +44,3 @@ Contributions to expand and improve this library are welcome. To contribute:
 ## Contact
 
 For any queries or suggestions, feel free to open an issue in the repository.
-
-```
-cd https://github.com/artemmeeen001/cairo-functions
-```
