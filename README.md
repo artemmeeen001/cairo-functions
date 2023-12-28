@@ -7,3 +7,9 @@ Sure, I can help you create a README file for your program. Based on the Cairo c
 
 This library is a comprehensive collection of special math functions implemented in the Cairo programming language. It is primarily focused on providing high-precision calculations for a range of special functions, such as Gamma functions for integers, half-integers, and real numbers, with the potential for further expansion to other special functions.
 
+
+## Features
+
+- **Gamma Function Calculations**: Supports Gamma function calculations for integers, half-integers, and real numbers.
+- **Special Mathematical Operations**: Includes a variety of special math operations like factorial, double factorial, exponential functions, logarithmic functions, and more.
+- **High-Precision Fixed Point Arithmetic**: Utilizes Cairo's fixed-point arithmetic for high-precision calculations.
