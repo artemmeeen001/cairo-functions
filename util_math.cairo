@@ -62,3 +62,54 @@ func display_fixed (fixed_value: FixedPoint):
     %}
     return()
 end
+
+
+# Type conversion functions
+func convert_fixed_to_int {range_check_ptr} (fixed: FixedPoint) -> (integer: felt):
+    let (integer, _) = division_with_remainder_signed(fixed.value, FIXED_FRACT_PART, FIXED_BOUND)
+    return (integer)
+end
+
+func convert_int_to_fixed {range_check_ptr} (integer: felt) -> (fixed: FixedPoint):
+    check_less_or_equal(integer, FIXED_INT_PART)
+    check_less_or_equal(-FIXED_INT_PART, integer)
+    tempvar fixed_value = integer * FIXED_FRACT_PART
+    let fixed = FixedPoint(fixed_value)
+    return (fixed)
+end
+
+func convert_double_to_fixed {range_check_ptr}(double: DoubleFloat) -> (fixed: FixedPoint):
+    alloc_locals
+    local fixed_mantissa = double.mantissa * FIXED_FRACT_PART
+    let base_divisor : felt = power(10, double.exponent)
+    let (fixed_result, _) = division_with_remainder_unsigned(fixed_mantissa, base_divisor)
+    return (fixed = FixedPoint(fixed_result))
+end
+
+# Advanced mathematical operations using 64x61 fixed point values
+func calculate_floor {range_check_ptr} (value: felt) -> (floor_value: felt):
+    let (int_val, mod_val) = division_with_remainder_signed(value, FIXED_UNIT, FIXED_BOUND)
+    let floor_value = value - mod_val
+    assert_fixed_range(floor_value)
+    return (floor_value)
+end
+
+func calculate_ceil {range_check_ptr} (value: felt) -> (ceil_value: felt):
+    let (int_val, mod_val) = division_with_remainder_signed(value, FIXED_UNIT, FIXED_BOUND)
+    let ceil_value = (int_val + 1) * FIXED_UNIT
+    assert_fixed_range(ceil_value)
+    return (ceil_value)
+end
+
+# Simplified mathematical functions for ease of use
+func calculate_minimum {range_check_ptr} (a: felt, b: felt) -> (min_value: felt):
+    let (a_le_b) = less_or_equal(a, b)
+    return (a_le_b == 1) ? a : b
+end
+
+func calculate_maximum {range_check_ptr} (a: felt, b: felt) -> (max_value: felt):
+    let (a_le_b) = less_or_equal(a, b)
+    return (a_le_b == 1) ? b : a
+end
+
+
