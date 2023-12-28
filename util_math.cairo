@@ -112,4 +112,3 @@ func calculate_maximum {range_check_ptr} (a: felt, b: felt) -> (max_value: felt)
     return (a_le_b == 1) ? b : a
 end
 
-
