@@ -125,3 +125,10 @@ func subtract_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (
     return (difference = FixedPoint(difference_value))
 end
 
+func multiply_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (product: FixedPoint):
+    tempvar product_temp = a.value * b.value
+    let (product_value, _) = division_with_remainder_signed(product_temp, FIXED_FRACT_PART, FIXED_BOUND)
+    assert_fixed_range(product_value)
+    return (product = FixedPoint(product_value))
+end
+
