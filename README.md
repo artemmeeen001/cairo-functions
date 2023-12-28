@@ -20,3 +20,10 @@ This library is a comprehensive collection of special math functions implemented
 To use this library, ensure that you have Cairo installed and set up. You can find more information about installing Cairo [here](https://www.cairo-lang.org/docs/quickstart.html).
 
 Once Cairo is set up, clone this repository to your local machine:
+
+
+```
+git clone https://github.com/artemmeeen001/cairo-functions
+```
+
+Navigate to the cloned directory:
