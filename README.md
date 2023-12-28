@@ -13,3 +13,10 @@ This library is a comprehensive collection of special math functions implemented
 - **Gamma Function Calculations**: Supports Gamma function calculations for integers, half-integers, and real numbers.
 - **Special Mathematical Operations**: Includes a variety of special math operations like factorial, double factorial, exponential functions, logarithmic functions, and more.
 - **High-Precision Fixed Point Arithmetic**: Utilizes Cairo's fixed-point arithmetic for high-precision calculations.
+
+
+## Installation
+
+To use this library, ensure that you have Cairo installed and set up. You can find more information about installing Cairo [here](https://www.cairo-lang.org/docs/quickstart.html).
+
+Once Cairo is set up, clone this repository to your local machine:
