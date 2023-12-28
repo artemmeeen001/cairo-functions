@@ -112,3 +112,10 @@ func calculate_maximum {range_check_ptr} (a: felt, b: felt) -> (max_value: felt)
     return (a_le_b == 1) ? b : a
 end
 
+
+func add_fixed_values {range_check_ptr} (a: FixedPoint, b: FixedPoint) -> (sum: FixedPoint):
+    let sum_value = a.value + b.value
+    assert_fixed_range(sum_value)
+    return (sum = FixedPoint(sum_value))
+end
+
