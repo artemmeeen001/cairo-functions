@@ -28,8 +28,6 @@ git clone https://github.com/artemmeeen001/cairo-functions
 
 Navigate to the cloned directory:
 
+cd cairo-functions
 
-```
-cd https://github.com/artemmeeen001/cairo-functions
-```
-
+## Contributing
