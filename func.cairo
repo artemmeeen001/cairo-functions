@@ -52,8 +52,11 @@ func check_gamma_for_odd_integers {range_check_ptr} (integer_value: felt):
 
 # Placeholder for future test function
 func future_test_function {range_check_ptr}(test_param: felt):
+    euler_gamma = CalculateEulerGamma()
+    logging.info(f"Euler-Mascheroni Constant: {euler_gamma}")
     return()
 end
+
 
 func main {range_check_ptr}():
     logging.basicConfig(level=logging.INFO)
