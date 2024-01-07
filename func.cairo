@@ -29,8 +29,9 @@ from math_libs.util_math import (
 # Recursive function to test gamma values for odd integers
 func check_gamma_for_odd_integers {range_check_ptr} (integer_value: felt):
     alloc_locals
-    if integer_value in [0, 1]:
-        return()
+    # Simplify conditional return in check_gamma_for_odd_integers
+    if integer_value <= 1:
+    return
     end
 
     let (fixed_point_value) = ConvertToFixedPoint(ConvertToDouble(integer_value, 0))
