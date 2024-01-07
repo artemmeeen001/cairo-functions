@@ -108,3 +108,7 @@ func main {range_check_ptr}():
     logging.info(f' END OF TESTS: {end_time} seconds\n')
     return ()
 end
+
+
+if __name__ == '__main__':
+    unittest.main()
