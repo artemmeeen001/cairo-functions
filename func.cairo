@@ -28,7 +28,7 @@ from math_libs.util_math import (
 
 # Recursive function to test gamma values for odd integers
 func check_gamma_for_odd_integers {range_check_ptr} (integer_value: felt):
-# Add try-except blocks in mathematical functions to handle potential errors
+    alloc_locals
     try:
         alloc_locals
         # Simplify conditional return in check_gamma_for_odd_integers
@@ -47,6 +47,7 @@ func check_gamma_for_odd_integers {range_check_ptr} (integer_value: felt):
         return()
         except Exception as e:
             print(f"Error occurred: {e}")
+        return()
     end
 
 # Placeholder for future test function
@@ -55,6 +56,8 @@ func future_test_function {range_check_ptr}(test_param: felt):
 end
 
 func main {range_check_ptr}():
+    logging.basicConfig(level=logging.INFO)
+    logging.info('\n STARTING TEST OF GAMMA FUNCTION LIBRARY')
     %{
         import time
         start_time = time.time()
@@ -99,5 +102,6 @@ func main {range_check_ptr}():
         print(' -------------------------------------')
         print(f' END OF TESTS: {end_time} seconds\n')
     %}   
+    logging.info(f' END OF TESTS: {end_time} seconds\n')
     return ()
 end
