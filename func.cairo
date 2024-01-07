@@ -28,22 +28,26 @@ from math_libs.util_math import (
 
 # Recursive function to test gamma values for odd integers
 func check_gamma_for_odd_integers {range_check_ptr} (integer_value: felt):
-    alloc_locals
-    # Simplify conditional return in check_gamma_for_odd_integers
-    if integer_value <= 1:
-    return
-    end
+# Add try-except blocks in mathematical functions to handle potential errors
+    try:
+        alloc_locals
+        # Simplify conditional return in check_gamma_for_odd_integers
+        if integer_value <= 1:
+        return
+        end
 
-    let (fixed_point_value) = ConvertToFixedPoint(ConvertToDouble(integer_value, 0))
-    check_gamma_for_odd_integers(integer_value - 2)
-    let (gamma_result) = GammaFunctionForHalfIntegers(fixed_point_value)
-    tempvar gamma_result_value = gamma_result.val
-    %{
-        display_text = f' Gamma({integer_value}/2) = {gamma_result_value/ConstantOne}'
-        print(display_text)
-    %}
-    return()
-end
+        let (fixed_point_value) = ConvertToFixedPoint(ConvertToDouble(integer_value, 0))
+        check_gamma_for_odd_integers(integer_value - 2)
+        let (gamma_result) = GammaFunctionForHalfIntegers(fixed_point_value)
+        tempvar gamma_result_value = gamma_result.val
+        %{
+            display_text = f' Gamma({integer_value}/2) = {gamma_result_value/ConstantOne}'
+            print(display_text)
+        %}
+        return()
+        except Exception as e:
+            print(f"Error occurred: {e}")
+    end
 
 # Placeholder for future test function
 func future_test_function {range_check_ptr}(test_param: felt):
