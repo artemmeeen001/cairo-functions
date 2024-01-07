@@ -7,7 +7,7 @@ from math_libs.special_functions import (
     WindschitlGammaFunction,
     LanczosGammaFunction
 )
-
+ # Optimized versions of the following functions
 from math_libs.util_math import (
     ConvertToDouble,
     ConvertToFixedPoint,
